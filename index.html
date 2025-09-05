@@ -197,40 +197,63 @@
             color: #a89a74;
         }
         
-        /* 职业生涯时间线 */
+        /* 职业生涯时间线 - 横向布局 */
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto 60px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        
+        .timeline-container {
+            display: flex;
+            gap: 30px;
+            min-width: max-content;
+            padding: 20px 0;
         }
         
         .timeline:before {
             content: '';
             position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #c8aa6e;
-            transform: translateX(-50%);
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c8aa6e, #785a28, #c8aa6e);
+            transform: translateY(-50%);
+            z-index: 1;
         }
         
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
-            width: 50%;
-            padding: 20px;
-            background: rgba(13, 26, 51, 0.7);
-            border-radius: 5px;
-            border: 1px solid #785a28;
+            flex: 0 0 280px;
+            padding: 25px 20px;
+            background: rgba(13, 26, 51, 0.8);
+            border-radius: 10px;
+            border: 2px solid #785a28;
+            text-align: center;
+            transition: all 0.3s ease;
+            z-index: 2;
         }
         
-        .timeline-item:nth-child(odd) {
-            left: 0;
+        .timeline-item:hover {
+            transform: translateY(-10px);
+            border-color: #c8aa6e;
+            box-shadow: 0 10px 30px rgba(200, 170, 110, 0.3);
         }
         
-        .timeline-item:nth-child(even) {
-            left: 50%;
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            width: 12px;
+            height: 12px;
+            background: #c8aa6e;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            border: 3px solid #0a1428;
         }
         
         .timeline-date {
@@ -416,14 +439,26 @@
                 width: 100%;
             }
             
-            .timeline:before {
-                left: 20px;
+            .timeline {
+                padding: 10px 0;
+            }
+            
+            .timeline-container {
+                gap: 20px;
+                padding: 10px 0;
             }
             
             .timeline-item {
-                width: 100%;
-                left: 0 !important;
-                margin-left: 40px;
+                flex: 0 0 250px;
+                padding: 20px 15px;
+            }
+            
+            .timeline:before {
+                display: none;
+            }
+            
+            .timeline-item:before {
+                display: none;
             }
             
             .info-grid {
@@ -492,7 +527,7 @@
                         </div>
                         <div class="info-item">
                             <h3>当前战队</h3>
-                            <p>LNG Esports</p>
+                            <p>IG</p>
                         </div>
                         <div class="info-item">
                             <h3>擅长英雄</h3>
@@ -507,6 +542,7 @@
         <section id="career" class="career-timeline">
             <h2 class="section-title">职业生涯</h2>
             <div class="timeline">
+                <div class="timeline-container">
                 <div class="timeline-item">
                     <div class="timeline-date">2019年</div>
                     <div class="timeline-content">
@@ -571,6 +607,7 @@
                             <li>为粉丝带来更多精彩表现</li>
                         </ul>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
