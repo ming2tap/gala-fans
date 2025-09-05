@@ -197,20 +197,33 @@
             color: #a89a74;
         }
         
-        /* 职业生涯时间线 - 横向布局 */
+        /* 职业生涯时间线 - 自动循环播放 */
         .timeline {
             position: relative;
             max-width: 1200px;
             margin: 0 auto 60px;
-            overflow-x: auto;
+            overflow: hidden;
             padding: 20px 0;
         }
         
         .timeline-container {
             display: flex;
             gap: 30px;
-            min-width: max-content;
+            animation: scroll-timeline 20s linear infinite;
             padding: 20px 0;
+        }
+        
+        @keyframes scroll-timeline {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .timeline-container:hover {
+            animation-play-state: paused;
         }
         
         .timeline:before {
@@ -441,11 +454,13 @@
             
             .timeline {
                 padding: 10px 0;
+                overflow: hidden;
             }
             
             .timeline-container {
                 gap: 20px;
                 padding: 10px 0;
+                animation: scroll-timeline 15s linear infinite;
             }
             
             .timeline-item {
@@ -543,11 +558,17 @@
             <h2 class="section-title">职业生涯</h2>
             <div class="timeline">
                 <div class="timeline-container">
+                <!-- 第一组时间线项目 -->
                 <div class="timeline-item">
                     <div class="timeline-date">2019年</div>
                     <div class="timeline-content">
                         <h3>SDG战队</h3>
                         <p>GALA在SDG战队开始了自己的职业生涯，初步展现出ADC位置的潜力。</p>
+                        <ul>
+                            <li>LPL春季赛首秀</li>
+                            <li>展现ADC天赋</li>
+                            <li>获得职业经验</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -556,6 +577,11 @@
                     <div class="timeline-content">
                         <h3>加入RNG</h3>
                         <p>转会至Royal Never Give Up战队，逐渐成长为LPL顶尖ADC选手。</p>
+                        <ul>
+                            <li>LPL夏季赛四强</li>
+                            <li>个人技术提升</li>
+                            <li>团队配合磨合</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -564,6 +590,11 @@
                     <div class="timeline-content">
                         <h3>LPL春季赛冠军</h3>
                         <p>随RNG获得LPL春季赛冠军，并在MSI季中冠军赛中夺冠。</p>
+                        <ul>
+                            <li>LPL春季赛冠军</li>
+                            <li>MSI季中冠军赛冠军</li>
+                            <li>世界赛八强</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -572,6 +603,11 @@
                     <div class="timeline-content">
                         <h3>MSI冠军</h3>
                         <p>再次随RNG获得MSI季中冠军赛冠军，个人表现突出。</p>
+                        <ul>
+                            <li>MSI季中冠军赛冠军</li>
+                            <li>LPL春季赛亚军</li>
+                            <li>世界赛十六强</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -580,14 +616,19 @@
                     <div class="timeline-content">
                         <h3>加入LNG</h3>
                         <p>转会至LNG Esports，继续在LPL赛场上展现出色的ADC实力。</p>
+                        <ul>
+                            <li>LPL春季赛六强</li>
+                            <li>LPL夏季赛四强</li>
+                            <li>世界赛十六强</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">2024年</div>
                     <div class="timeline-content">
-                        <h3>LNG核心输出</h3>
-                        <p>在LNG战队中担任核心ADC位置，多次在关键比赛中发挥出色，帮助队伍取得优异成绩。</p>
+                        <h3>加入IG</h3>
+                        <p>转会至IG战队，打出多个五杀继续领跑LPL五杀记录，展现出色的个人实力。</p>
                         <ul>
                             <li>LPL春季赛四强</li>
                             <li>LPL夏季赛亚军</li>
@@ -599,8 +640,100 @@
                 <div class="timeline-item">
                     <div class="timeline-date">2025年</div>
                     <div class="timeline-content">
-                        <h3>持续征战</h3>
-                        <p>继续在LNG战队效力，作为经验丰富的ADC选手，为队伍提供稳定的输出保障。</p>
+                        <h3>IG核心ADC</h3>
+                        <p>继续在IG战队效力，作为经验丰富的ADC选手，为队伍提供稳定的输出保障。</p>
+                        <ul>
+                            <li>LPL春季赛进行中</li>
+                            <li>目标冲击更高荣誉</li>
+                            <li>为粉丝带来更多精彩表现</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 重复第一组时间线项目以实现无缝循环 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2019年</div>
+                    <div class="timeline-content">
+                        <h3>SDG战队</h3>
+                        <p>GALA在SDG战队开始了自己的职业生涯，初步展现出ADC位置的潜力。</p>
+                        <ul>
+                            <li>LPL春季赛首秀</li>
+                            <li>展现ADC天赋</li>
+                            <li>获得职业经验</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020年</div>
+                    <div class="timeline-content">
+                        <h3>加入RNG</h3>
+                        <p>转会至Royal Never Give Up战队，逐渐成长为LPL顶尖ADC选手。</p>
+                        <ul>
+                            <li>LPL夏季赛四强</li>
+                            <li>个人技术提升</li>
+                            <li>团队配合磨合</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2021年</div>
+                    <div class="timeline-content">
+                        <h3>LPL春季赛冠军</h3>
+                        <p>随RNG获得LPL春季赛冠军，并在MSI季中冠军赛中夺冠。</p>
+                        <ul>
+                            <li>LPL春季赛冠军</li>
+                            <li>MSI季中冠军赛冠军</li>
+                            <li>世界赛八强</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2022年</div>
+                    <div class="timeline-content">
+                        <h3>MSI冠军</h3>
+                        <p>再次随RNG获得MSI季中冠军赛冠军，个人表现突出。</p>
+                        <ul>
+                            <li>MSI季中冠军赛冠军</li>
+                            <li>LPL春季赛亚军</li>
+                            <li>世界赛十六强</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023年</div>
+                    <div class="timeline-content">
+                        <h3>加入LNG</h3>
+                        <p>转会至LNG Esports，继续在LPL赛场上展现出色的ADC实力。</p>
+                        <ul>
+                            <li>LPL春季赛六强</li>
+                            <li>LPL夏季赛四强</li>
+                            <li>世界赛十六强</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024年</div>
+                    <div class="timeline-content">
+                        <h3>加入IG</h3>
+                        <p>转会至IG战队，打出多个五杀继续领跑LPL五杀记录，展现出色的个人实力。</p>
+                        <ul>
+                            <li>LPL春季赛四强</li>
+                            <li>LPL夏季赛亚军</li>
+                            <li>世界赛八强</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年</div>
+                    <div class="timeline-content">
+                        <h3>IG核心ADC</h3>
+                        <p>继续在IG战队效力，作为经验丰富的ADC选手，为队伍提供稳定的输出保障。</p>
                         <ul>
                             <li>LPL春季赛进行中</li>
                             <li>目标冲击更高荣誉</li>
