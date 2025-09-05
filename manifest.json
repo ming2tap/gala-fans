@@ -1,0 +1,24 @@
+{
+  "name": "GALA - 英雄联盟职业选手粉丝站",
+  "short_name": "GALA粉丝站",
+  "description": "GALA（陈伟）是英雄联盟职业选手，LNG Esports ADC，曾获得MSI冠军。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1428",
+  "theme_color": "#c8aa6e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%230a1428'/><text x='96' y='120' font-size='120' text-anchor='middle' fill='%23c8aa6e'>⚔️</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%230a1428'/><text x='256' y='320' font-size='320' text-anchor='middle' fill='%23c8aa6e'>⚔️</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["games", "entertainment", "sports"],
+  "lang": "zh-CN"
+}
